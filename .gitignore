@@ -1,0 +1,9 @@
+node_modules/
+target/
+keys/pot12_0000.ptau
+keys/pot12_0001.ptau
+keys/reserves_0000.zkey
+keys/proof.json
+keys/calldata.txt
+*.ptau
+.env
