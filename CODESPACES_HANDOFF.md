@@ -111,6 +111,8 @@ stellar contract invoke \
   --vk ... \
   --total_liabilities 1000000 \
   --reserve_balance 1200000
+
+
 ```
 
 ### Step 7: Build the frontend
@@ -157,3 +159,25 @@ proof-of-reserves/
 - BN254 field prime: `0x30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd47`
 - The circuit supports exactly 5 accounts (N=5 hardcoded in circom)
 - Testnet only — do not use with real assets
+Deployed contract: CDKOGVGTG7ODIPJ37KA5LQSUEQM63RIOSROVVBG7K34SBVQWOAIMKB4U
+
+---
+
+## Testnet Accounts (pre-funded via Friendbot, 10,000 XLM each)
+
+Use any 5 of these public addresses in the "Fetch Balances" UI to test with real on-chain accounts.
+Secret keys have been removed from this file — store them in `.env` or `keys/temp_accounts.json` (both gitignored).
+
+| # | Public Key |
+|---|------------|
+| 1 | `GAOMD5ECKCS45EGQYPSKFW4YCI6PHCUCVZLAHI6OSY3Z3BFEVGNYXA37` |
+| 2 | `GDV2ILQB35TKFV3HSNEPKJGFVUSOXGCQA6PPXRELEOQAU2DZ7N2Y4TXQ` |
+| 3 | `GDAMI4XLRQQ36TBJGW6IIJIM54XTH7QH7Y3EUDH2RUA7FKU5OCBF66NK` |
+| 4 | `GD6TPEQLGJFSDCPLZHSPFGJRRB6SADBZQRUTEWMZKV6LAHG6NAJFFLG7` |
+| 5 | `GALTMDI3JAE6ZSJNSD4F5C4O5FZIRBBJPFGXGGWRFOTBJO3V2LEOXXRF` |
+| 6 | `GBDQ5ZGUNATKL4SLEV2PJSGH3KRFTO46MVSBOIEL3BOL5STL3WSHEWPM` |
+| 7 | `GCWFFNGQATS6JFS3C55GGWG3PBUOVMU3GBXNB5J24D2MSJEEW6A37XNC` |
+| 8 | `GBKIFZMBNS4KOSRO46VXIIJWMCUAEDQKWBMNWZTABMVGBNJTQDMSLYR7` |
+| 9 | `GDNS6KAFHES4B6E55V3HMA5P6U5VNCJ7HYUXWZ26CTSVRIGNDCLI2TI4` |
+| 10 | `GCU5CTDQ2UDW667T4VMZ2HKOXEA4ZNR353SJ7VZ7RG2DMLIGMWJ5IQPK` |
+

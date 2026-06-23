@@ -21,13 +21,14 @@ function g1ToBytes(point) {
   return [...decToBytes32(point[0]), ...decToBytes32(point[1])];
 }
 
-// G2 point (affine, Fp2 elements): x.im + x.re + y.im + y.re = 128 bytes
+// G2 point (affine): Soroban/Ethereum format = X.c1 || X.c0 || Y.c1 || Y.c0 = 128 bytes
+// snarkjs JSON stores Fp2 as [c0, c1], so we swap to c1||c0 here.
 function g2ToBytes(point) {
   return [
-    ...decToBytes32(point[0][0]),
-    ...decToBytes32(point[0][1]),
-    ...decToBytes32(point[1][0]),
-    ...decToBytes32(point[1][1]),
+    ...decToBytes32(point[0][1]),  // X.c1 (imaginary)
+    ...decToBytes32(point[0][0]),  // X.c0 (real)
+    ...decToBytes32(point[1][1]),  // Y.c1 (imaginary)
+    ...decToBytes32(point[1][0]),  // Y.c0 (real)
   ];
 }
 

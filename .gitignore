@@ -7,3 +7,8 @@ keys/proof.json
 keys/calldata.txt
 *.ptau
 .env
+
+# Sensitive runtime keys — never commit these
+keys/deployer_key.json
+keys/contract_id.txt
+frontend/contract_id.txt

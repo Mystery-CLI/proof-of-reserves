@@ -1,0 +1,30 @@
+{
+  "name": "Proof of Reserves",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  "postStartCommand": "npm install --silent && node scripts/server.js > /tmp/server.log 2>&1 & echo 'Server starting at http://localhost:8080 — logs at /tmp/server.log'",
+
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "Proof of Reserves Demo",
+      "onAutoForward": "openPreview"
+    }
+  },
+
+  "secrets": {
+    "DEPLOYER_SECRET": {
+      "description": "Stellar testnet deployer secret key (starts with S)",
+      "documentationUrl": "https://stellar.org/docs"
+    },
+    "CONTRACT_ID": {
+      "description": "Deployed Soroban contract ID (starts with C)"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["rust-lang.rust-analyzer"]
+    }
+  }
+}
