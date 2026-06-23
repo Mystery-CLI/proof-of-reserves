@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#131922"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </radialGradient>
+    <linearGradient id="shield-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3a5a"/>
+      <stop offset="100%" stop-color="#0d2035"/>
+    </linearGradient>
+    <linearGradient id="shield-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7fd4f7"/>
+      <stop offset="100%" stop-color="#2a8abf"/>
+    </linearGradient>
+    <filter id="glow-blue" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="round-clip">
+      <rect width="512" height="512" rx="96"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#4aaad8" stroke-width="1" clip-path="url(#round-clip)">
+    <line x1="0"   y1="128" x2="512" y2="128"/>
+    <line x1="0"   y1="256" x2="512" y2="256"/>
+    <line x1="0"   y1="384" x2="512" y2="384"/>
+    <line x1="128" y1="0"   x2="128" y2="512"/>
+    <line x1="256" y1="0"   x2="256" y2="512"/>
+    <line x1="384" y1="0"   x2="384" y2="512"/>
+  </g>
+
+  <!-- Ambient glow behind shield -->
+  <ellipse cx="256" cy="248" rx="130" ry="150" fill="#1a6b9a" opacity="0.12" filter="url(#glow-soft)"/>
+
+  <!-- Shield shape -->
+  <path d="M256,92 L376,140 L376,282 Q376,372 256,422 Q136,372 136,282 L136,140 Z"
+        fill="url(#shield-fill)" stroke="url(#shield-stroke)" stroke-width="3.5"
+        filter="url(#glow-blue)"/>
+
+  <!-- Inner shield highlight (top edge sheen) -->
+  <path d="M256,106 L364,150 L364,155 L256,112 L148,155 L148,150 Z"
+        fill="#7fd4f7" opacity="0.08"/>
+
+  <!-- Circuit line: left node to check start -->
+  <line x1="172" y1="272" x2="200" y2="272" stroke="#4aaad8" stroke-width="2" opacity="0.5"/>
+  <circle cx="172" cy="272" r="4" fill="none" stroke="#4aaad8" stroke-width="2" opacity="0.5"/>
+
+  <!-- Circuit line: check end to right node -->
+  <line x1="323" y1="208" x2="348" y2="208" stroke="#4aaad8" stroke-width="2" opacity="0.5"/>
+  <circle cx="348" cy="208" r="4" fill="none" stroke="#4aaad8" stroke-width="2" opacity="0.5"/>
+
+  <!-- Checkmark -->
+  <polyline points="200,272 240,316 323,208"
+            stroke="#4ecb71" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"
+            fill="none" filter="url(#glow-green)"/>
+
+  <!-- Node dots at checkmark vertices -->
+  <circle cx="200" cy="272" r="7" fill="#4ecb71" filter="url(#glow-green)"/>
+  <circle cx="240" cy="316" r="7" fill="#4ecb71" filter="url(#glow-green)"/>
+  <circle cx="323" cy="208" r="7" fill="#4ecb71" filter="url(#glow-green)"/>
+
+  <!-- Stellar star (top-right of shield) -->
+  <g transform="translate(330,152)" filter="url(#glow-blue)">
+    <polygon points="0,-12 2.8,-4 11,-4 4.8,1.5 7,9.5 0,5 -7,9.5 -4.8,1.5 -11,-4 -2.8,-4"
+             fill="#7fd4f7" opacity="0.9"/>
+  </g>
+
+  <!-- ZK label inside shield (subtle) -->
+  <text x="256" y="178" text-anchor="middle" font-family="'Courier New', monospace"
+        font-size="14" letter-spacing="6" fill="#4aaad8" opacity="0.5">ZK</text>
+
+  <!-- Bottom label -->
+  <rect x="108" y="446" width="296" height="34" rx="5" fill="#131922" stroke="#1e2d40" stroke-width="1"/>
+  <text x="256" y="459" text-anchor="middle" font-family="'Courier New', monospace"
+        font-size="9" letter-spacing="3" fill="#5a7a99">PROOF OF RESERVES</text>
+  <text x="256" y="473" text-anchor="middle" font-family="'Courier New', monospace"
+        font-size="8" letter-spacing="2" fill="#3a5a70">ON STELLAR</text>
+</svg>
